@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Unbounded:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00464B;
+  --color-primary-hover: #002d30;
+  --color-brand-bg: #FBFAF7;
+  --color-brand-card: #F4F2EC;
+  --color-brand-text: #101314;
+  --color-brand-accent: #00737B;
+  --color-brand-accent-light: #80E8DD;
+  --font-serif: "Geist", sans-serif;
+  --font-sans: "Geist", sans-serif;
+}
+
+/* Global text selection — brand blue */
+::selection {
+  background-color: #0066FF;
+  color: #ffffff;
+}
+
+/* Custom premium design utilities */
+.bg-blueprint {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0, 70, 75, 0.05) 1px, transparent 0),
+    linear-gradient(to right, rgba(0, 70, 75, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 70, 75, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 120px 120px, 120px 120px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00464B 30%, #00737B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes water-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+    border-width: 2px;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+    border-width: 0px;
+  }
+}
+
+.animate-water-ripple {
+  animation: water-ripple 1.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  backdrop-filter: blur(3px) brightness(1.2);
+}
