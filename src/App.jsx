@@ -8,6 +8,7 @@ import VideoShowcase from './components/VideoShowcase';
 import Lenis from 'lenis';
 import Pricing from './components/Pricings';
 import PricingDetailed from './components/PricingDetailed';
+import Footer from './components/Footer';
 
 const App = () => {
   const [brief, setBrief] = useState(null);
@@ -90,6 +91,7 @@ const App = () => {
           <section id="pricing">
             <Pricing onOpenEstimator={handleOpenEstimator} />
           </section>
+          <Footer />
         </>
       )}
     </div>
