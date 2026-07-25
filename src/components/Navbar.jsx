@@ -58,28 +58,20 @@ const Navbar = ({ onOpenEstimator }) => {
       e.preventDefault();
       setIsOpen(false);
       const targetId = href.replace('#', '');
-      
+
       if (window.location.pathname !== '/') {
         window.history.pushState({}, '', '/');
         window.dispatchEvent(new PopStateEvent('popstate'));
         setTimeout(() => {
           const target = document.getElementById(targetId);
           if (target) {
-            if (window.lenis) {
-              window.lenis.scrollTo(target);
-            } else {
-              target.scrollIntoView({ behavior: 'smooth' });
-            }
+            target.scrollIntoView({ behavior: 'smooth' });
           }
         }, 150);
       } else {
         const target = document.getElementById(targetId);
         if (target) {
-          if (window.lenis) {
-            window.lenis.scrollTo(target);
-          } else {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
+          target.scrollIntoView({ behavior: 'smooth' });
         }
       }
     }

@@ -126,8 +126,10 @@ const Hero = ({ onOpenEstimator }) => {
 
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 w-full max-w-sm sm:max-w-xl md:max-w-none mx-auto px-3">
 
-            <button
-              onClick={onOpenEstimator}
+            <a
+              href="https://calendly.com/softwisory/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-between gap-2 md:gap-4 pl-5 sm:pl-4 md:pl-7 pr-1.5 sm:pr-1 md:pr-2 py-1.5 sm:py-1 md:py-2 bg-brand-bg hover:bg-white text-primary font-sans text-sm sm:text-[13px] md:text-[15px] font-semibold rounded-full transition-all duration-300 cursor-pointer w-full sm:flex-1 md:flex-none md:w-fit"
             >
               <span className="whitespace-nowrap">Schedule a Call</span>
@@ -135,12 +137,12 @@ const Hero = ({ onOpenEstimator }) => {
               <div className="w-9 h-9 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-[#0066FF] flex items-center justify-center transition-all duration-300 group-hover:translate-x-1 shrink-0">
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
-            </button>
+            </a>
 
 
             {/* WhatsApp Glass Button */}
             <a
-              href="https://wa.me/#"
+              href="https://wa.me/919866291003"
               target="_blank"
               rel="noopener noreferrer"
               className="

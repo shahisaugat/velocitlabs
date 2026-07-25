@@ -5,7 +5,6 @@ import ExpandableServices from './components/ExpandableServices';
 import BrandMarquee from './components/BrandMarquee';
 import LocalImpact from './components/LocalImpact';
 import VideoShowcase from './components/VideoShowcase';
-import Lenis from 'lenis';
 import Pricing from './components/Pricings';
 import PricingDetailed from './components/PricingDetailed';
 import Footer from './components/Footer';
@@ -22,41 +21,10 @@ const App = () => {
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
 
-  useEffect(() => {
-    // Initialize Lenis smooth scrolling with reduced scroll speed (wheelMultiplier: 0.6)
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.6, // Lower multiplier = slower, smoother scrolling
-      touchMultiplier: 1.5,
-    });
-
-    window.lenis = lenis;
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-      window.lenis = null;
-    };
-  }, []);
-
   const handleOpenEstimator = () => {
     const briefSection = document.getElementById('brief');
     if (briefSection) {
-      if (window.lenis) {
-        window.lenis.scrollTo(briefSection);
-      } else {
-        briefSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      briefSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -64,11 +32,7 @@ const App = () => {
     setBrief(briefData);
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      if (window.lenis) {
-        window.lenis.scrollTo(contactSection);
-      } else {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
